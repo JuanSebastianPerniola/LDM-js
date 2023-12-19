@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .borde-80 {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            width: 25%;
+        }
+
+        button {
+            height: 25%;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <button class="borde-80" type="button" onclick="añadir()">Aparece</button>
+    <button class="borde-80" type="button" onclick="borrar()">Desaparece</button>
+    <!-- <div class="borde-80"> -->
+    <!-- <img src="percyJackson.png.png" alt=""> -->
+    <!-- </div> -->
+</body>
+<script>
+    //function 1 crea la imagen 
+    function añadir() {
+        let image = document.createElement('img');
+        image.setAttribute('id', 'im');
+        image.src = 'gato.png';
+        document.getElementById('body').appendChild(image);
+    }
+    // function 2 borra la iamgen 
+    function borrar() {
+        const element = document.getElementById('im');
+        if (element) {
+            element.remove();
+        }
+    }
+</script>
+
+</html>

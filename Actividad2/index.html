@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Crea una pàgina web (o copia alguna existent).
+En aquesta pàgina, hi ha d'haver almenys dos botons: 
+mitjançant JavaScript, un farà la mida de la lletra més gran (d'un div, p, o element en concret), i l'altre farà la mida de la lletra més petita. -->
+    <div class="align">
+        <button type="button" class="texto" onclick="bigger()">Hago grande</button>
+        <button type="button" class="texto" onclick="smaller()">Hago pequeño</button>
+        <h1 id="texto"> Puedo ser muchas cosas </h1>
+    </div>
+</body>
+<script>
+    function bigger() {
+        pequeño = document.getElementById("texto"); 
+        pequeño.style.fontSize = "100px";
+    }
+    
+    function smaller() {
+        pequeño = document.getElementById("texto");
+        pequeño.style.fontSize = "10px";
+    }
+</script>
+
+</html>
