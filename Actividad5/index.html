@@ -1,134 +1,132 @@
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Actividad15</title>
-        <style>
-            body {
-                text-align: center;
-                background-color: #6fbf7d;
-            }
-
-            h2 {
-                color: #000000;
-                text-align: center;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-            }
-
-            section {
-                border-color: black;
-                display: flex;
-                justify-content: space-between;
-            }
-
-            img {
-                text-align: center;
-                object-fit: cover;
-                border-radius: 50%;
-                text-align: center;
-                width: 200px;
-                height: 200px;
-                padding: 0%;
-            }
-
-
-            article {
-
-                margin: 5%;
-                padding: 1%;
-                width: 25%;
-                height: 100%;
-                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-                transition: all .3s ease-out-in;
-            }
-
-            p {
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                text-align: center;
-                display: block;
-
-            }
-
-            article:hover {
-                transform: scale(1.05);
-            }
-
-            .primrera-linea {
-                color: #212e11;
-            }
-
-            .segunda-linea {
-                color: #111f00;
-            }
-
-            .tercera-linea {
-                color: #111f00;
-            }
-
-            .redondearImagen {
-                border-radius: 50%;
-                overflow: auto;
-            }
-        </style>
-    </head>
-
-    <body>
-        <header>
-            <h2>Conoce a nuestro equipo </h2>
-            <section>
-
-                <article class="primerArticulo Circle">
-                    <img src="img1.png" alt="imgannes-curriculm">
-                    <p class="primrera-linea">Patrick Rothfuss</p>
-                    <p class="segunda-linea">Posicion en la empresa</p>
-                    <p class="tercera-linea">"Informacion sobre el mismo "</p>
-                </article>
-                <article class="primerArticulo Circle">
-                    <img src="img2.png" alt="imgannes-curriculm">
-                    <p class="primrera-linea">Leigh Bardugo</p>
-                    <p class="segunda-linea">Posicion en la empresa</p>
-                    <p class="tercera-linea">"Informacion sobre el mismo "</p>
-                </article>
-                <article class="primerArticulo Circle">
-                    <img src="img3.png" alt="imgannes-curriculm">
-                    <p class="primrera-linea">Brandon Sanderson</p>
-                    <p class="segunda-linea">Posicion en la empresa</p>
-                    <p class="tercera-linea">"Informacion sobre el mismo "</p>
-                </article>
-                <article class="primerArticulo Circle">
-                    <img src="img4.png" alt="imgannes-curriculm">
-                    <p class="primrera-linea">Rebecca Yarros</p>
-                    <p class="segunda-linea">Posicion en la empresa</p>
-                    <p class="tercera-linea">"Informacion sobre el mismo "</p>
-                </article>
-            </section>
-            <!-- primer boton tiene que agregar una nueva clase  css a un elemento de nuestra seleccion -->
-            <button type="button" onclick="Redondo()"> Redondear cuadrados</button>
-            <button type="button" onclick="NormaLeLe()">Volver a la normalidad</button>
-        </header>
-    </body>
-    <script>
-        function Redondo() {
-            const cajas = document.querySelectorAll(".primerArticulo");
-            // hacer con un forEach. que se cambien todos
-            // no hace falta agreagar array. no son arrays
-            cajas.forEach(caja => {
-                caja.classList.remove("primerArticulo");
-                caja.classList.add("redondearImagen");
-            });
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad15</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #6fbf7d;
         }
-    
-         function NormaLeLe() {
-            const antiRedondos = document.querySelectorAll(".redondearImagen");
-            // hacer con un forEach. que se cambien todos
-            // no hace falta agregar array. no son arrays
-            antiRedondos.forEach(antiRedondo => {
-                antiRedondo.classList.remove("redondearImagen");
-                antiRedondo.classList.add("primerArticulo");
-            });
-        }
-    </script>
 
-    </html>
+        h2 {
+            color: #000000;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        section {
+            border-color: black;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        img {
+            text-align: center;
+            object-fit: cover;
+            border-radius: 50%;
+            text-align: center;
+            width: 200px;
+            height: 200px;
+            padding: 0%;
+        }
+
+
+        article {
+
+            margin: 5%;
+            padding: 1%;
+            width: 25%;
+            height: 100%;
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+            transition: all .3s ease-out-in;
+        }
+
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+
+        article:hover {
+            transform: scale(1.05);
+        }
+
+        .primrera-linea {
+            color: #212e11;
+        }
+
+        .segunda-linea {
+            color: #111f00;
+        }
+
+        .tercera-linea {
+            color: #111f00;
+        }
+
+        .redondearImagen {
+            border-radius: 25%;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Conoce a nuestro equipo </h2>
+        <section>
+
+            <article class="primerArticulo Circle">
+                <img src="img1.png" alt="imgannes-curriculm">
+                <p class="primrera-linea">Patrick Rothfuss</p>
+                <p class="segunda-linea">Posicion en la empresa</p>
+                <p class="tercera-linea">"Informacion sobre el mismo "</p>
+            </article>
+            <article class="primerArticulo Circle">
+                <img src="img2.png" alt="imgannes-curriculm">
+                <p class="primrera-linea">Leigh Bardugo</p>
+                <p class="segunda-linea">Posicion en la empresa</p>
+                <p class="tercera-linea">"Informacion sobre el mismo "</p>
+            </article>
+            <article class="primerArticulo Circle">
+                <img src="img3.png" alt="imgannes-curriculm">
+                <p class="primrera-linea">Brandon Sanderson</p>
+                <p class="segunda-linea">Posicion en la empresa</p>
+                <p class="tercera-linea">"Informacion sobre el mismo "</p>
+            </article>
+            <article class="primerArticulo Circle">
+                <img src="img4.png" alt="imgannes-curriculm">
+                <p class="primrera-linea">Rebecca Yarros</p>
+                <p class="segunda-linea">Posicion en la empresa</p>
+                <p class="tercera-linea">"Informacion sobre el mismo "</p>
+            </article>
+        </section>
+        <!-- primer boton tiene que agregar una nueva clase  css a un elemento de nuestra seleccion -->
+        <button type="button" onclick="Redondo()"> Redondear cuadrados</button>
+        <button type="button" onclick="NormaLeLe()">Volver a la normalidad</button>
+    </header>
+</body>
+<script>
+    function Redondo() {
+        const cajas = document.querySelectorAll(".primerArticulo");
+        // hacer con un forEach. que se cambien todos
+        // no hace falta agreagar array. no son arrays
+        cajas.forEach(caja => {
+            caja.classList.remove("primerArticulo");
+            caja.classList.add("redondearImagen");
+        });
+    }
+
+    function NormaLeLe() {
+        const antiRedondos = document.querySelectorAll(".redondearImagen");
+        // hacer con un forEach. que se cambien todos
+        // no hace falta agregar array. no son arrays
+        antiRedondos.forEach(antiRedondo => {
+            antiRedondo.classList.remove("redondearImagen");
+            antiRedondo.classList.add("primerArticulo");
+        });
+    }
+</script>
+
+</html>
