@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad15</title>
+    <title>ActividadJavaScript6</title>
     <style>
         body {
             text-align: center;
@@ -69,7 +69,8 @@
             color: red;
             transition: 1s;
         }
-        .cambioDeColor:hover{
+
+        .cambioDeColor:hover {
             opacity: 1
         }
     </style>
@@ -111,25 +112,28 @@
     </header>
 </body>
 <script>
-    var AvisoP = document.getElementById("AvisoP");
     const cajas = document.querySelectorAll("p");
 
     function CambioDeColor() {
         cajas.forEach(caja => {
-            caja.classList.add("cambioDeColor");
+            if (caja.textContent.length < 15) { // Change 50 to your desired length
+                caja.classList.add("cambioDeColor");
+            }
         });
     }
-
 
     function mostraAlerta() {
         alert("Has cambiado de color a los p");
     }
+
     function BacktToReality() {
         cajas.forEach(caja => {
             caja.classList.remove("cambioDeColor");
         });
     }
-    AvisoP.addEventListener("click", mostraAlerta);
+
+    var primerArticulo = document.querySelector(".primerArticulo");
+    primerArticulo.addEventListener("click", mostraAlerta);
 </script>
 
 </html>

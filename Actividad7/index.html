@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .margen {
+            margin: 16px;
+        }
+
+        .color {
+            color: #5a58b3;
+        }
+
+        .quitarColor {
+            color: #5a58b3;
+        }
+
+        nav {
+            color: white;
+            background-color: #5a58b3;
+            grid-area: nav;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 20px;
+        }
+
+        /* ahora el boton se ve */
+        nav button {
+            margin: 20px;
+        }
+        .nav_toggle{
+            background-color: #5a58b3;
+            display:none;
+            cursor: pointer;
+            margin: 20px;
+        }
+        .bar{
+            margin: 20px;
+            display: block;
+            width: 25px;
+            height: 7.5px;
+            margin: 5px auto;
+            -webkit-transition:all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: white;
+        }
+        nav a {
+            color: #000;
+        }
+
+        nav ul {
+
+            position: relative;
+            display: flex;
+            list-style: none;
+            gap: 20px;
+
+        }
+
+        .QuitarDecoAs {
+            text-decoration: none;
+        }
+
+        nav li {
+
+            text-decoration: none;
+            transition: background-color 0.6s;
+        }
+
+        nav li:hover {
+            background-color: #3a3894;
+        }
+
+        nav h2 {
+            margin-left: 25px;
+            display: flex;
+        }
+
+        /* arreglar el overflow de la barra se desborda del nav */
+        nav input {
+            display: block;
+            margin-right: 20px;
+            height: 20px;
+        }
+
+        /* main 1 de aqui hasta el fin es main s */
+        .contenedor1 {
+            padding: 20px;
+            grid-area: main1;
+            background-color: rgb(242 239 239);
+        }
+
+        .contenedor1-1 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .contenido {
+            width: 80%;
+            flex: 1;
+            margin: auto;
+        }
+
+        .imagen {
+            border-radius: 10px;
+            width: 50%;
+        }
+
+        /* main 2 */
+        .contenedor2 {
+            grid-area: main2;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .contenedor2-2 {
+
+            display: flex;
+        }
+
+        .contenedor-80 {
+            width: 80%;
+            margin: auto;
+        }
+
+        .contenedor2 img {
+            object-fit: cover;
+            width: 100px;
+            height: 100px;
+        }
+
+        .pMargen {
+            margin: 1px;
+        }
+
+        .articuloBarajdo {
+            display: flex;
+        }
+
+        .contenedor2 article {
+            text-align: center;
+            margin: 20px;
+            width: 25%;
+            height: 307px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5%;
+            box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-out-in;
+        }
+
+
+        .contenedor2 article:hover {
+            transform: scale(1.05);
+        }
+
+        /* fin del "main 2" */
+
+        /* principio main 3 */
+
+        .contenedor3 img {
+            border-top-left-radius: 3%;
+            border-top-right-radius: 3%;
+            position: relative;
+            object-fit: cover;
+            width: 100%;
+            height: 224px;
+        }
+
+        .contenedor3 {
+            padding: 20px;
+            grid-area: main3;
+            background-color: rgb(242 239 239);
+        }
+
+        .contenedor-80-3 {
+            width: 100%;
+            margin: auto;
+            display: flex;
+        }
+
+        .contenedor3 article {
+            margin: 9px;
+            width: 31%;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-out-in;
+        }
+
+        .contenedor3 article:hover {
+            transform: scale(1.05);
+        }
+
+        .contenedor3 h3 {
+            text-align: center;
+        }
+
+        .contenedor3 p {
+
+            text-align: center;
+        }
+
+
+        /* fin main 3 */
+        /* Inicio formulario0 */
+        label {
+            margin: 5px;
+        }
+
+        label h2 {
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            align-items: center;
+            grid-area: main4;
+        }
+
+
+        .boton {
+            color: white;
+            padding: 3px;
+            background-color: #5a58b3;
+            margin: 44px 2px 40px 0px;
+        }
+
+        /* fin formulario */
+        /* footer inicio */
+        footer {
+
+            grid-area: footer;
+            background-color: rgb(0, 0, 0);
+
+        }
+
+
+        .OrganizacionFooter {
+            gap: 3%;
+            color: white;
+            justify-content: center;
+        }
+
+        .contenedorFooter {
+            margin: auto;
+            width: 80%;
+        }
+
+
+        footer li {
+            margin-bottom: 5px;
+            color: #ccc;
+            list-style: none;
+        }
+
+        .RedesOpacidad {
+            color: #5a58b3;
+            opacity: 1;
+        }
+
+        .RedesOpacidad:hover {
+            opacity: 0.5;
+            zoom: 1;
+        }
+
+        li img {
+            width: 20%;
+        }
+
+        /* Culo del footer */
+        body {
+            margin: 0;
+            font-size: large;
+            font-family: Arial, sans-serif;
+            grid-template-rows: auto 2fr auto;
+            grid-template-areas:
+                "nav"
+                "main1"
+                "main2"
+                "main3"
+                "main4"
+                "footer";
+            background-color: white;
+        }
+
+        .lista {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .imagenDisplayer {
+            display: contents;
+        }
+
+        /* Estilos para pantallas más grandes (por defecto) */
+
+        @media screen and (max-width:1024px) {
+            .nav_toggle {
+                display: block;
+                margin-right: 20px;
+                text-align: center;
+            }
+            /* burguesa aparece ul desaparece */
+            nav ul{
+                display: block;
+            }
+            .nav_items {
+                position: absolute;
+                top:58px;
+                left: 0px;
+                background: #3a3894;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                transform:translateX(-100%);
+            }
+            
+            .close span{
+                transform:  rotate(45deg) translate(0px, 0px);
+            }
+            .close span :nth-child(2){
+                display: none;
+            }
+            .close span :nth-child(3){
+                transform: rotate(-45deg) translate(-5px, 1px);
+            }
+            .open{
+                transform: translateX(0) !important;
+            }
+            .contenedor2-2 {
+                flex-wrap: wrap;
+            }
+
+            .contenedor2 article {
+                height: 313px;
+                width: 41%;
+            }
+
+            .contenedor-80-3 {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-content: center;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            nav ul {
+                display: none;
+            }
+
+            nav input {
+                display: none;
+            }
+
+            .contenedor2 article {
+                height: 308px;
+                width: 50%;
+            }
+
+            nav button {
+                color: #000;
+                display: block;
+                margin-right: 20px;
+                text-align: center;
+            }
+
+            .contenedor2-2 {
+                height: auto;
+                display: flex;
+                justify-content: center;
+            }
+
+            .imagen {
+                width: 79%;
+            }
+
+            .contenedor2 article {
+                height: 307px;
+                width: 100%;
+            }
+
+            .contenido {
+                width: 82%;
+            }
+
+            .contenedor3 article {
+                width: 100%;
+            }
+
+            footer ul {
+                padding: 0px;
+            }
+        }
+
+        @media screen and (max-width: 540px) {
+
+            nav input {
+                display: none;
+            }
+
+            nav button {
+                color: #000;
+                display: block;
+                margin-right: 20px;
+                text-align: center;
+            }
+
+            footer ul {
+                width: 51%;
+            }
+
+            .contenedorFooter {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h2>CIDETechs</h2>
+        <div class=" color nav_items" id="_items"> 
+            <ul >
+                <li><a class="QuitarDecoAs"  href="#">Inicio</a></li>
+                <li><a class="QuitarDecoAs" href="#S1">Sobre Nosotros</a></li>
+                <li><a class="QuitarDecoAs" href="#S2">Serveis</a></li>
+                <li><a class="QuitarDecoAs" href="#S3">Portofolio</a></li>
+                <li><a class="QuitarDecoAs" href="#S4">Contacto</a></li>
+            </ul>
+        </div>
+       
+
+        <input class=" search-container buscador" type="busqueda" id="busqueda" name="busqueda" placeholder="busqueda">
+        <div class="nav_toggle" id="_toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <main>
+        <section class="contenedor1">
+            <div class="contenedor-80">
+                <div class="contenedor2-2">
+                    <article class="contenido">
+                        <h2 id="S1">Sobre nosotros</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad ut eos autem quo Lorem, ipsum
+                            dolor sit amet consectetur adipisicing elit. Necessitatibus dolore eius explicabo nam ab
+                            sunt laborum pariatur sed, vel commodi quibusdam libero qui officia modi dolorem provident
+                            animi voluptas quod.id dolor doloribus, quidem ut! Doloremque, dolor? Distinctio,
+                            consequatur nulla.</p>
+                    </article>
+                    <img class="imagen" src="genteSeria.png.jpg" alt="imgannes-curriculum">
+                </div>
+            </div>
+        </section>
+        <section class="contenedor2">
+            <div class="contenedor-80">
+                <h2 id="S2">Nuestros servicios</h2>
+                <div class="contenedor2-2">
+
+                    <article>
+                        <img src="auriculares.png" alt="imgannes-curriculm">
+                        <h3 class="color">Diseño Grafico</h3>
+                        <p class="pMargen">Creacion de soluciones visuales para tu marca. Incluyendo logotipos,
+                            identidad corporativa y publicidad</p>
+                    </article>
+                    <article>
+                        <img class="imagenContenedor2" src="soporte.png" alt="imgannes-curriculm">
+                        <h3 class="color">Desarrollo WEB y videojuegos</h3>
+                        <p class="pMargen">Desarrollo de sitios web personalizados, desde paginas coorporativas
+                            hasta
+                            tiendas en linea complejas </p>
+                    </article>
+                    <article>
+                        <img src="desarrolloWEB.png" alt="imgannes-curriculm">
+                        <h3 class="color">Desarrollo WEB y videojuegos</h3>
+                        <p class="pMargen">
+                            Desarrollo de sitios web personalizados, desde paginas coorporativas hasta
+                            tiendas en linea complejas</p>
+                    </article>
+                    <article>
+                        <img src="apreton.png" alt="imgannes-curriculm">
+                        <h3 class="color">Desarrollo WEB y videojuegos</h3>
+                        <p class="pMargen">Asistencia y soporte continuo para todos nuestros servicios</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contenedor3">
+            <div class="contenedor-80">
+                <h2 id="S3">Nuestros portfolios</h2>
+                <div class=" contenedor-80-3">
+                    <article>
+
+                        <img src="oficina1.jpg" alt="imagen-portfolio">
+                        <h3 class="color">Proyecto 1 </h3>
+                        <p>Descripcion del prroyecto</p>
+                        <p><a class="color QuitarDecoAs" href="http://">Ver detalles</a></p>
+                    </article>
+                    <article>
+                        <img src="oficina2.jpg" alt="imagen-portfolio">
+                        <h3 class="color">Proyecto 2</h3>
+                        <p class="segunda-linea">Posicion en la empresa</p>
+                        <p><a class="color QuitarDecoAs" href="http://">Ver detalles</a></p>
+                    </article>
+                    <article class="box-la-del-der">
+                        <img src="oficina3.jpg" alt="imagen-portfolio">
+                        <h3 class="color"> Proyecto 3</h3>
+                        <p>Posicion en la empresa</p>
+                        <p><a class="color QuitarDecoAs" href="http://">Ver detalles</a></p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+        <section class="contenedor-80">
+            <form id="S4">
+
+                <label for="input1">
+                    <h2>Contactanos</h2>
+                </label>
+                <label for="input2">Nombre : </label>
+                <input type="text">
+                <label for="input3">Correo electronico :</label>
+                <input type="email">
+                <label for="input4">Mensaje : </label>
+                <textarea name="MiPrimerTextArea" id="TextArea1" cols="30"
+                    rows="10">Utilice este cuadro para escribir</textarea>
+                <input class=" boton" type="submit" value="Enviar">
+
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class=" lista contenedorFooter OrganizacionFooter">
+            <ul class=" margen OrganizacionFooterMediaquerying">
+                <li>CIDETechs</li>
+                <li>
+                    <p>Especializacion en cosas de cide y cide mas cide </p>
+                </li>
+            </ul>
+            <ul class=" OrganizacionFooterMediaquerying">
+                <li>Navegacion</li>
+                <a></a>
+                <li><a class="QuitarDecoAs quitarColor" href="#S1">Sobre Nosotros</a></li>
+                <li><a class="QuitarDecoAs quitarColor" href="#S2">Nuestros Servicios</a> </li>
+                <li><a class="QuitarDecoAs quitarColor" href="#S3">Nuestro Portfolio</a></li>
+                <li><a class="QuitarDecoAs quitarColor" href="#S4">Contactanos</a></li>
+            </ul>
+            <ul class=" OrganizacionFooterMediaquerying">
+                <li>Contactos</li>
+                <li><a href="http://"> Tarantino@gmail.es</a></li>
+                <li>+544333777 </li>
+                <li>Carta por paloma</li>
+            </ul>
+            <ul class=" OrganizacionFooterMediaquerying">
+                <li>Redes</li>
+                <a class="RedesOpacidad" href=""><i class="fa-brands fa-facebook"></i></a>
+                <a class="RedesOpacidad" href=""><i class="fa-brands fa-twitter"></i></a>
+                <a class="RedesOpacidad" href=""><i class="fa-brands fa-instagram"></i></a>
+                <a class="RedesOpacidad" id="S5" href=""><i class="fa-brands fa-linkedin"></i></a>
+            </ul>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>
