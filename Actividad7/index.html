@@ -33,28 +33,35 @@
         nav button {
             margin: 20px;
         }
-        .nav_toggle{
+
+        .nav_toggle {
             background-color: #5a58b3;
-            display:none;
+            display: none;
             cursor: pointer;
             margin: 20px;
         }
-        .bar{
+
+        .bar {
             margin: 20px;
             display: block;
             width: 25px;
             height: 7.5px;
             margin: 5px auto;
-            -webkit-transition:all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
             background-color: white;
         }
-        nav a {
+
+        .efecto {
             color: #000;
+            /* transition: all 0.3s ease-in-out; */
         }
 
-        nav ul {
+        .lupa{
+                display: none;
+            }
 
+        nav ul {
             position: relative;
             display: flex;
             list-style: none;
@@ -67,13 +74,12 @@
         }
 
         nav li {
-
             text-decoration: none;
             transition: background-color 0.6s;
         }
 
         nav li:hover {
-            background-color: #3a3894;
+            background-color: #f7f7f7;
         }
 
         nav h2 {
@@ -307,34 +313,59 @@
                 margin-right: 20px;
                 text-align: center;
             }
+
             /* burguesa aparece ul desaparece */
-            nav ul{
+            nav ul {
                 display: block;
+            }
+            .lupa{
+                display: none;
             }
             .nav_items {
                 position: absolute;
-                top:58px;
+                top: 58px;
                 left: 0px;
                 background: #3a3894;
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 height: 100%;
-                transform:translateX(-100%);
+                transform: translateX(-100%);
             }
-            
-            .close span{
-                transform:  rotate(45deg) translate(0px, 0px);
+
+            nav li {
+                margin: 20px;
+                width: 5%;
             }
-            .close span :nth-child(2){
+
+            .efecto {
+                color: #000;
+
+                /* transition: all 0.3s ease-in-out; */
+            }
+
+            .efecto:hover {
+                /* si funciona pero no con el mouse de inspeccionar */
+                background-color: #000;
+                width: 20%;
+            }
+
+            .close span {
+                transform: rotate(45deg) translate(0px, 0px);
+            }
+
+            .close span :nth-child(2) {
                 display: none;
             }
-            .close span :nth-child(3){
+
+            .close span :nth-child(3) {
                 transform: rotate(-45deg) translate(-5px, 1px);
             }
-            .open{
+
+            .open {
                 transform: translateX(0) !important;
             }
+
             .contenedor2-2 {
                 flex-wrap: wrap;
             }
@@ -353,13 +384,17 @@
         }
 
         @media screen and (max-width: 600px) {
-            nav ul {
+
+            /* nav ul {
                 display: none;
+            } */
+            /* añadir una lupita arriba de lista  */
+            .lupa {
+                height: auto;
+                width: 100%;
+                display: block;
             }
 
-            nav input {
-                display: none;
-            }
 
             .contenedor2 article {
                 height: 308px;
@@ -430,18 +465,20 @@
 <body>
     <nav>
         <h2>CIDETechs</h2>
-        <div class=" color nav_items" id="_items"> 
-            <ul >
-                <li><a class="QuitarDecoAs"  href="#">Inicio</a></li>
-                <li><a class="QuitarDecoAs" href="#S1">Sobre Nosotros</a></li>
-                <li><a class="QuitarDecoAs" href="#S2">Serveis</a></li>
-                <li><a class="QuitarDecoAs" href="#S3">Portofolio</a></li>
-                <li><a class="QuitarDecoAs" href="#S4">Contacto</a></li>
+        <div class=" color nav_items" id="_items">
+            <ul>
+
+                <li><img class="lupa" src="lupa.png" alt=""></li>
+                <li><a class="efecto QuitarDecoAs" href="#">Inicio</a></li>
+                <li><a class="efecto QuitarDecoAs" href="#S1">Sobre Nosotros</a></li>
+                <li><a class="efecto QuitarDecoAs" href="#S2">Serveis</a></li>
+                <li><a class="efecto QuitarDecoAs" href="#S3">Portofolio</a></li>
+                <li><a class="efecto QuitarDecoAs" href="#S4">Contacto</a></li>
             </ul>
         </div>
-       
 
-        <input class=" search-container buscador" type="busqueda" id="busqueda" name="busqueda" placeholder="busqueda">
+
+        <input class="search-container buscador" type="busqueda" id="busqueda" name="busqueda" placeholder="busqueda">
         <div class="nav_toggle" id="_toggle">
             <span class="bar"></span>
             <span class="bar"></span>
