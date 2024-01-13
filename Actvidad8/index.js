@@ -1,25 +1,76 @@
-//variable 1 para agarrar el input
-let inputbox = document.querySelector("#inputbox");
-//variable 2 para agregar las listas
-let list = document.querySelector("#list");
-
-inputbox.addEventListener("keyup", function (event){
-    if(event.key == "Enter"){
-        addItem(this.value);
-        this.value = "";
-    }
-})
-
-let addItem = (inputbox) => {
-    let listItem = document.createElement("li");
-    listItem.innerHTML = `${inputbox}<i></i>`;
-    listItem.addEventListener("click", function(){
-        this.classList.toggl('done');
-    })
-    listItem.querySelector("i").addEventListener("click",
-    function(){
-        listItem.remove();
-    })
-    list.appendChild(listItem);
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
 }
 
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+var showAllTasks = false; // Variable para controlar si se deben mostrar todas las tareas o solo las completadas
+
+// Function to filter tasks
+function filterTasks() {
+  var list = document.getElementById("myUL");
+  var items = list.getElementsByTagName("li");
+
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i];
+    
+    if (showAllTasks || item.classList.contains("checked")) {
+      item.style.display = "list-item";
+    } else {
+      item.style.display = "none";
+    }
+  }
+
+  // Alternar entre mostrar todas las tareas y solo las completadas
+  showAllTasks = !showAllTasks;
+}
