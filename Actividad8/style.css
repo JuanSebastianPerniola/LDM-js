@@ -13,9 +13,9 @@ ul {
     padding: 0;
 }
 
-/* Style the list items */
+/*Lista creda a partir de js, pero aunque se cree apartee necesita estilo  */
 ul li {
-    /* color: #EAE6E5; */
+    
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
@@ -24,13 +24,16 @@ ul li {
     transition: 0.2s;
     list-style: none;
 }
-
+/* ul:hover{
+    background-color: #000000;
+    cursor: pointer;
+} */
 /* cambia segundo es even/odd */
 /* ul li:nth-child(even) {
     background: #fffefe;
 } */
 
-/* Darker background-color on hover */
+/* Hacemos que se agregue esta clase con js para que cuando se marque se quede "tachada" */
 ul li.checked {
     background: #b6b0b0;
     color: #fff;

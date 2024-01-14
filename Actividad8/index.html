@@ -9,15 +9,17 @@
 </head>
 
 <body>
-    <div class="cuadrado">
-        <div id="myDIV" class="header">
-            <h2>To Do Page </h2>
+    <div class="cuadrado"> <!-- div 1 -->
+        <div id="myDIV" class="header"> <!-- div 2 -->
+            
+            <h2>To Do Page </h2> <!-- Contenido -->
             <input type="text" id="myInput" placeholder="Title...">
             <div class="contenedor">
+                <!-- al cambiar el diseño de la pagina no necesito manejar el overflow del cuadro -->
                 <span onclick="newElement()" class="addBtn">Add</span>
                 <span onclick="filterTasks('all')" class="addBtn">All</span>
                 <span onclick="filterTasks('completed')" class="addBtn">Completed</span>
-                <span onclick="filterTasks('checked')"  class="addBtn">checked</span>
+                <span onclick="filterTasks('clear')" id="filterButtonClear" class="addBtn">Clear all</span>
             </div>
 
         </div>

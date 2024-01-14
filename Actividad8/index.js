@@ -15,7 +15,7 @@ function removeTask(element) {
   var listItem = element.parentElement;
   listItem.style.display = "none";
 }
-//elimnamos elementos
+//elimnamos elementos creados 
 document.querySelectorAll('.close').forEach(function (closeButton) {
   closeButton.onclick = function () {
     var listItem = closeButton.parentElement;
@@ -23,7 +23,7 @@ document.querySelectorAll('.close').forEach(function (closeButton) {
   };
 });
 
-// Add a "checked" symbol when clicking on a list item
+// Añadimos la clase checked o sea que se vea marcada
 var list = document.querySelector('ul');
 list.addEventListener('click', function (ev) {
   if (ev.target.tagName === 'LI') {
@@ -31,30 +31,30 @@ list.addEventListener('click', function (ev) {
   }
 }
 );
- 
-//doc.elemtn = que hace que cuando pulsemos "Enter" se añdaa una tarea 
- document.getElementById("myInput").addEventListener("keyup", function (event) {
-  if (event.key === "Enter") {
+
+//Añadir opcion para poder intrudicir por input a traves del boton enter
+document.getElementById("myInput").addEventListener("keyup", function (event) {
+  if (event.key === "Enter") { //detecta si se pula "Enter" la tecla 
     newElement();
   }
 });
 // Crear nueva tarea por hacer 
 function newElement() {
   var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value; //.value pilla el valor de texto introducido
+  var inputValue = document.getElementById("myInput").value; //inputValue pilla el valor de texto introducido
   var t = document.createTextNode(inputValue);
 
-  if (inputValue === '') { // si al pulsar add, no hay nada, salta un aler
+  if (inputValue === '') { // si al pulsar add, no hay nada, salta un alert
     alert("Oops, parece que no has escrito nada, vuelve a intentarlo!");
     return; // Sale de la función si no hay valor
   }
 
-  li.appendChild(t);
+  li.appendChild(t); //.appendChild es como el append de python para appendear  
   document.getElementById("myUL").appendChild(li);
   document.getElementById("myInput").value = "";
 
   var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
+  var txt = document.createTextNode("\u00D7"); //Unicode
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
@@ -65,63 +65,32 @@ function newElement() {
     div.style.display = "none";
   };
 
-  // Reasigna los eventos de clic para los elementos close existentes
-  for (var i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-      var div = this.parentElement;
-      div.style.display = "none";
-    };
-  }
 }
 
+var showAllTasks = false;
 
-var showAllTasks = false; // Variable para controlar si se deben mostrar todas las tareas o solo las completadas
-
-// Funcion filtrar listas hechas y cuales no 
-function filterTasks() {
+function filterTasks(filterType) {
   var list = document.getElementById("myUL");
   var items = list.getElementsByTagName("li");
+
+  if (filterType === 'clear') {
+    // Clear all li elements
+    list.innerHTML = '';
+    return;
+  }
 
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
 
-    if (showAllTasks || item.classList.contains("checked")) {
+    if (filterType === 'all' || showAllTasks || item.classList.contains("checked")) {
       item.style.display = "list-item";
     } else {
       item.style.display = "none";
     }
   }
 
-  // Alternar entre mostrar todas las tareas y solo las completadas
-  showAllTasks = !showAllTasks;
-}
-
-
-function filterTasks(filterType) {
-  var list = document.getElementById("myUL");
-  var items = list.getElementsByTagName("li");
-
-  for (var i = 0; i < items.length; i++) {
-      var item = items[i];
-
-      switch (filterType) {
-          case 'all':
-              item.style.display = "list-item";
-              break;
-          case 'completed':
-              if (item.classList.contains("checked")) {
-                  item.style.display = "list-item";
-              } else {
-                  item.style.display = "none";
-              }
-              break;
-          case 'checked':
-              if (item.classList.contains("checked")) {
-                  item.style.display = "none";
-              } else {
-                  item.style.display = "list-item";
-              }
-              break;
-      }
+  // Toggle between showing all tasks and only completed tasks
+  if (filterType === 'all' || filterType === 'completed') {
+    showAllTasks = !showAllTasks;
   }
 }
