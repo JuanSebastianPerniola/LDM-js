@@ -22,11 +22,6 @@ ul li {
     background: #fffdfd;
     font-size: 18px;
     transition: 0.2s;
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     list-style: none;
 }
 
@@ -37,7 +32,7 @@ ul li {
 
 /* Darker background-color on hover */
 ul li.checked {
-    background: #888;
+    background: #b6b0b0;
     color: #fff;
     text-decoration: line-through;
 }
@@ -76,6 +71,7 @@ input {
 
 /* Style the "Add" button */
 .addBtn {
+    margin: 20px;
     padding: 10px;
     width: 25%;
     background: #d9d9d9;
