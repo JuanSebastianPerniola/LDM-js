@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>Mi blog</title>
+
+</head>
+
+<body>
+    <div class="caja0">
+        <div class="caja1">
+             <h1>Bienvenido a un Blog sobre Lorem</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ea accusantium odio,
+            enim consequuntur eveniet, amet impedit quo ratione culpa unde blanditiis dolore eum inventore optio sit
+            laboriosam dolores excepturi
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, accusantium ratione. Recusandae voluptas
+            ex sed doloribus est,
+            accusantium quisquam quos, inventore molestiae, eos esse eveniet in facilis hic blanditiis sunt..
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, autem? Dicta repudiandae, officia alias
+            quibusdam atque ea quidem exercitationem beatae,
+            maiores at harum commodi, ex quasi magni modi omnis dolorum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi repellat excepturi at eligendi voluptatibus
+            dolorum id! Suscipit, ab deleniti perferendis,
+            fuga praesentium facere aliquid sequi, necessitatibus delectus natus dolorum cum.</p>
+        <div class="cajaComentarios">
+            <!-- <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea> -->
+            <textarea name="textcomentarioArea1" id="comentario" cols="30" rows="5"></textarea>
+            <button id="esconderComentario" class="cajaSend">Mostrar lista comentarios</button>
+            <button id="mostrarComets" class="cajaSend">Ocultar lista comentarios</button>
+            <button id="enviarComentario" class="cajaSend">Añadir Comentario</button>
+            <div id="comentarios-container"></div>
+        </div>
+        </div>
+       
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#enviarComentario").click(function () {
+                enviarComentario();
+            });
+            $('#mostrarComets').click(function () {
+                mostrarComents();
+            });
+
+            function mostrarComents() {
+                $('#comentarios-container section').slideUp();
+            };
+
+            $('#esconderComentario').click(function () {
+                esconderComents();
+            });
+
+            function esconderComents() {
+                $('#comentarios-container section').slideDown();
+            };
+            $("#comentario").keypress(function () {
+                if (event.key === 'Enter') {
+                    enviarComentario();
+                }
+            });
+            function enviarComentario() {
+                var comentario = $("#comentario").val().trim(); //quitamos espacios delante y atras, hace falta ? no, pero vi un video tutorial hoy de eso
+                //.val() coge la cadena y la transdorma en un valor 
+                if (comentario !== "") {
+                    var nuevoComentario = $("<section>").text(comentario);
+                    var botonEliminar = $("<button>").text("Eliminar").click(function () {
+                        $(this).parent().remove();
+                    });
+
+                    $("#comentarios-container").append(nuevoComentario);
+                    nuevoComentario.append(botonEliminar);
+                    // limpiamos 
+                    $("#comentario").val("");
+                } else {
+                    alert("Por favor, introduzca algo, sino no se puede añadir nada.");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
