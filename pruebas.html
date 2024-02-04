@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Input Example</title>
+</head>
+<body>
+
+<label for="points">Points (between 0 and 10):</label>
+<input type="range" id="points" name="points" min="0" max="10">
+<span id="pointsValue">5</span>
+
+<script>
+    // Get the range input and the span for displaying the value
+    var rangeInput = document.getElementById('points');
+    var pointsValue = document.getElementById('pointsValue');
+
+    // Update the span when the range input changes
+    rangeInput.addEventListener('input', function() {
+        // Update the displayed value
+        pointsValue.innerText = rangeInput.value;
+    });
+</script>
+
+</body>
+</html>
