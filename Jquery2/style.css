@@ -1,19 +1,6 @@
-/* html { */
-/* background-image: url('fotoAvionIzq.gif');
-    background-attachment: fixed; 
-    /* background-repeat: no-repeat; */
-/* width:500px;
-    height: 500px; 
-    height: 20%;  */
-/* }  */
 body {
-    background-image: url('footerFondo.jpg');
-    /* Ruta de tu imagen de fondo */
-    background-size: 100%;
-    /* Ajusta según tus preferencias */
+    background-image: url('footerFondo.jpg'); 
     background-position: center;
-    /* Ajusta según tus preferencias */
-    background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-areas:
@@ -104,21 +91,16 @@ main {
 
 .ui-autocomplete {
     font-size: large;
-    background-color: #0d9cec;
+    background-color: #45b0ee;
     width: 30% !important;
     max-height: 200px;
     overflow-y: auto;
-    /* prevent horizontal scrollbar */
     overflow-x: hidden;
-    /* add padding to account for vertical scrollbar */
     padding-right: 20px;
-    /* border-radius: 10px; */
-    /* position: relative; */
-    /* top:100px !important; */
-    /* left:500px !important; */
-    /* display: none; */
 }
-
+#ui-id-1{
+    border-radius: 5%;
+}
 
 #ui-id-2 {
     /* background: blue !important;  */
@@ -154,13 +136,13 @@ main {
 /* Track  no entiendo por que necessita track*/
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
+    border-radius: 25%;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #4d4d4d;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 
 /* Handle on hover */
@@ -190,7 +172,6 @@ article {
     background-color: #0d9cec;
     gap: 50px;
     text-align: center;
-    /* display: none; */
 }
 
 article img {
