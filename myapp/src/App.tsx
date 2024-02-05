@@ -1,20 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import TodoList from './TodoList';
-import AddTarea from './addTarea';  // Cambiado el nombre del componente
-// Eliminado el import innecesario: import addTarea from './addTarea';
+// App.js
+import React, { useState } from "react";
+import "./App.css";
+import { Button } from "./Button";
 
-function App() {
+export default function App() {
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
+
+  const handleAddTask = () => {
+    if (newTask.trim() !== '') {
+      setTasks([...tasks, newTask]);
+      setNewTask('');
+    }
+  };
+
+  const handleDeleteTask = () => {
+    // Lógica para eliminar tareas (si es necesario)
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <TodoList/>
-        <AddTarea content="" /> 
-        {/* {"Añade una t`"}  este texto funciona como texto dentro de nuestra pagina */}
-      </header>
+    <div className='App'>
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+      />
+      <Button onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} />
     </div>
   );
 }
-
-export default App;
