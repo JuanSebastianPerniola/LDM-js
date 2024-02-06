@@ -1,6 +1,3 @@
-html {
-}
-
 body {
   background: #5146ce;
 }
@@ -10,23 +7,30 @@ body {
   margin: auto;
   height: 100%;
   width: 80%;
- 
-
 }
-.vstack li {
+
+.list-group-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 75px;
   margin: auto;
-  width: 80%;
+  width: 100%; 
+  
 }
-
+.addButton{
+  display: flex;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.overflow{
+  margin: 10px;
+}
+.margin{
+  margin: 10px;
+}
 .vstack {
   margin: 10px;
   background-color: #ba46ce;
-}
-
-.form-floating button {
-  justify-content: center;
 }
