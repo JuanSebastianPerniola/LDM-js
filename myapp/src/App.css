@@ -1,19 +1,32 @@
 html {
-  background: #ddd;  
-  height: 100%;
-  display: flex;
 }
+
 body {
-  width: 100%;
-  margin: auto;
+  background: #5146ce;
 }
 
 .App {
   font-family: sans-serif;
-  text-align: center;
   margin: auto;
+  height: 100%;
+  width: 80%;
+ 
+
+}
+.vstack li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  margin: auto;
+  width: 80%;
 }
 
-#tarea{
- width: 45%;
+.vstack {
+  margin: 10px;
+  background-color: #ba46ce;
+}
+
+.form-floating button {
+  justify-content: center;
 }
