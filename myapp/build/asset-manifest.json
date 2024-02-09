@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.040ac354.css",
-    "main.js": "/static/js/main.2e19e59a.js",
-    "static/js/787.1937f22b.chunk.js": "/static/js/787.1937f22b.chunk.js",
-    "index.html": "/index.html",
-    "main.040ac354.css.map": "/static/css/main.040ac354.css.map",
-    "main.2e19e59a.js.map": "/static/js/main.2e19e59a.js.map",
-    "787.1937f22b.chunk.js.map": "/static/js/787.1937f22b.chunk.js.map"
+    "main.css": "https://juansebastianperniola.github.io/LDM-js/myapp/build/static/css/main.040ac354.css",
+    "main.js": "https://juansebastianperniola.github.io/LDM-js/myapp/build/static/js/main.429976d5.js",
+    "static/js/787.1937f22b.chunk.js": "https://juansebastianperniola.github.io/LDM-js/myapp/build/static/js/787.1937f22b.chunk.js",
+    "index.html": "https://juansebastianperniola.github.io/LDM-js/myapp/build/index.html",
+    "main.040ac354.css.map": "https://juansebastianperniola.github.io/LDM-js/myapp/build/static/css/main.040ac354.css.map",
+    "main.429976d5.js.map": "https://juansebastianperniola.github.io/LDM-js/myapp/build/static/js/main.429976d5.js.map",
+    "787.1937f22b.chunk.js.map": "https://juansebastianperniola.github.io/LDM-js/myapp/build/static/js/787.1937f22b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.040ac354.css",
-    "static/js/main.2e19e59a.js"
+    "static/js/main.429976d5.js"
   ]
 }
